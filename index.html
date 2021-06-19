@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>8 Puzzle Game</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+    <div id="moves">moves</div>
+    <div id="tab_grid">
+        <div class="clks" id="p11" onclick="switching('p11');">11</div>
+        <div class="clks" id="p12" onclick="switching('p12');" >12</div>
+        <div class="clks" id="p13" onclick="switching('p13');" >13</div>
+        <div class="clks" id="p21" onclick="switching('p21');" >21</div>
+        <div class="clks" id="p22" onclick="switching('p22');">22</div>
+        <div class="clks" id="p23" onclick="switching('p23');">23</div>
+        <div class="clks" id="p31" onclick="switching('p31');">31</div>
+        <div class="clks" id="p32" onclick="switching('p32');">32</div>
+        <div class="clks" id="p33" onclick="switching('p33');">33</div>
+    </div>
+    <div id="launch" onclick="startgame();">Start Game</div>
+    <script>
+    function startgame(){
+    var jo=new Array();
+    var c=0;
+    while(c<8)
+    {
+        var num=Math.round(Math.random()*100);
+        if((num==11) || (num==12) || (num==13) || (num==21) || (num==22) || (num==23) || (num==32) || (num==32) || (num==33))
+        {
+            if(!jo.includes(num))
+            {
+                jo[c]=num;
+                c=c+1;
+            }
+        }
+    }
+    document.getElementById('p11').textContent=jo[0];
+    document.getElementById('p11').style.background='url(images/'+jo[0]+'.jpg)';
+    document.getElementById('p12').textContent=jo[1];
+    document.getElementById('p12').style.background='url(images/'+jo[1]+'.jpg)';
+
+    document.getElementById('p13').textContent=jo[2];
+    document.getElementById('p13').style.background='url(images/'+jo[2]+'.jpg)';
+
+    document.getElementById('p21').textContent=jo[3];
+    document.getElementById('p21').style.background='url(images/'+jo[3]+'.jpg)';
+
+    document.getElementById('p22').textContent=jo[4];
+    document.getElementById('p22').style.background='url(images/'+jo[4]+'.jpg)';
+
+    document.getElementById('p23').textContent=jo[5];
+    document.getElementById('p23').style.background='url(images/'+jo[5]+'.jpg)';
+
+    document.getElementById('p31').textContent=jo[6];
+    document.getElementById('p31').style.background='url(images/'+jo[6]+'.jpg)';
+
+    document.getElementById('p32').textContent=jo[7];
+    document.getElementById('p32').style.background='url(images/'+jo[7]+'.jpg)';
+
+    document.getElementById('p33').textContent=jo[8];
+    document.getElementById('p33').style.background='url(images/'+jo[8]+'.jpg)';
+    document.getElementById('moves').textContent="Moves:0";
+}
+function switching(cell){
+    if(document.getElementById(cell).textContent!='1'){
+        switch(cell){
+            case 'p11':
+                if(document.getElementById('p12').textContent=='11'){
+                    var t=document.getElementById('p12').textContent;
+                    document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+                    document.getElementById('p11').textContent=t;
+
+                    document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                    document.getElementById('p12').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+                    num_moves++;
+                    document.getElementById('moves').textContent="Moves:"+num_moves;
+                }
+                if(document.getElementById('p21').textContent=='11'){
+                    var t=document.getElementById('p21').textContent;
+                    document.getElementById('p21').textContent=document.getElementById('p11').textContent;
+                    document.getElementById('p11').textContent=t;
+
+                    document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                    document.getElementById('p21').style.background='url('+document.getElementById('p21').textContent+'.jpg)';
+                    num_moves++;
+                    document.getElementById('moves').textContent="Moves:"+num_moves;
+        }
+            break;
+            case 'p12':
+            if(document.getElementById('p12').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            if(document.getElementById('p14').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p14').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p14').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+        }
+        break;
+        case 'p13':
+        if(document.getElementById('p12').textContent=='1'){
+            var t=document.getElementById('p12').textContent;
+            document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+            document.getElementById('p11').textContent=t;
+
+            document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+            document.getElementById('p11').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+            num_movesmoves++;
+            document.getElementById('moves').textContent="Moves:"+num_moves;
+        }
+        if(document.getElementById('p14').textContent=='1'){
+            var t=document.getElementById('p12').textContent;
+            document.getElementById('p14').textContent=document.getElementById('p11').textContent;
+            document.getElementById('p11').textContent=t;
+
+            document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+            document.getElementById('p11').style.background='url('+document.getElementById('p14').textContent+'.jpg)';
+            num_movesmoves++;
+            document.getElementById('moves').textContent="Moves:"+num_moves;
+        }
+        break;
+            case 'p21':
+            if(document.getElementById('p12').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            if(document.getElementById('p14').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p14').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p14').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            break;
+            case 'p22':
+            if(document.getElementById('p12').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            if(document.getElementById('p14').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p14').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p14').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            break;
+            case 'p23':
+            if(document.getElementById('p12').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            if(document.getElementById('p14').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p14').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p14').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            break;
+            case 'p31':
+            if(document.getElementById('p12').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            if(document.getElementById('p14').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p14').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p14').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            break;
+            case 'p32':
+            if(document.getElementById('p12').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p12').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p12').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            if(document.getElementById('p14').textContent=='1'){
+                var t=document.getElementById('p12').textContent;
+                document.getElementById('p14').textContent=document.getElementById('p11').textContent;
+                document.getElementById('p11').textContent=t;
+
+                document.getElementById('p11').style.background='url('+document.getElementById('p11').textContent+'.jpg)';
+                document.getElementById('p11').style.background='url('+document.getElementById('p14').textContent+'.jpg)';
+                num_movesmoves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            break;
+            case 'p33':
+            if(document.getElementById('p32').textContent=='11'){
+                var t=document.getElementById('p32').textContent;
+                document.getElementById('p32').textContent=document.getElementById('p33').textContent;
+                document.getElementById('p33').textContent=t;
+
+                document.getElementById('p32').style.background='url('+document.getElementById('p32').textContent+'.jpg)';
+                document.getElementById('p33').style.background='url('+document.getElementById('p33').textContent+'.jpg)';
+                num_moves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+            if(document.getElementById('p23').textContent=='1'){
+                var t=document.getElementById('p23').textContent;
+                document.getElementById('p23').textContent=document.getElementById('p33').textContent;
+                document.getElementById('p33').textContent=t;
+
+                document.getElementById('p23').style.background='url('+document.getElementById('p23').textContent+'.jpg)';
+                document.getElementById('p33').style.background='url('+document.getElementById('p33').textContent+'.jpg)';
+                num_moves++;
+                document.getElementById('moves').textContent="Moves:"+num_moves;
+            }
+        }
+    }
+}
+    </script>
+</body>
+</html>

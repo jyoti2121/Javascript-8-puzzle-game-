@@ -1,0 +1,85 @@
+body{
+    background-color: aqua;
+}
+#tab_grid{
+    width:402px ;
+    height: 402px;
+    border-radius: 5px;
+    display: grid;
+    border: 20px solid black;
+    padding: 1px;
+    margin: auto;
+    box-shadow: 0px 0px 20px white;
+    grid-template-columns: auto auto auto;
+    margin-top: 20px;
+    background-color: aquamarine;
+}
+.clks{
+    height: 133px;
+    width: 133px;
+    font-size: 0.1;
+}
+#p11{
+    background: url('images/11.jpg');
+    
+    height: 138px;
+}
+#p12{
+    background: url("images/12.jpg");
+    
+}
+#p13{
+    background: url("images/13.jpg");
+    
+}
+#p21{
+    background: url("images/21.jpg");  
+}
+#p22{
+    background: url("images/22.jpg");  
+}
+#p23{
+    background: url("images/23.jpg");  
+}
+#p31{
+    background: url("images/31.jpg");   
+}
+#p32{
+    background: url("images/32.jpg");   
+}
+#p33{
+    background: url("images/33.jpg");
+}
+
+#launch{
+    width: auto ;
+    margin: auto;
+    margin-top: 20px;
+    border: 2px solid #999;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 10px;
+    box-shadow: beige;
+    text-shadow: chartreuse;
+    font-family: Arial;
+    background-color: coral;
+}
+#launch:hover{
+    background-color: red;
+    color: black;
+    text-shadow: 0px 0px 10px #BA6F00;
+}
+#moves{
+    width:233px;
+    margin:auto;
+    margin-top:50px;
+    border:2px solid #999;
+    height:40px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 10px;
+    color:black;
+    background-color: red;
+}
